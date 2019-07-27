@@ -29,7 +29,7 @@ export default class Timer extends Component<TimerProps, TimerState> {
 
         return (
             <div className={timerClassNames} onClick={this.onClick.bind(this)}>
-                {moment().seconds(seconds).format('mm:ss')}
+                {moment.utc(seconds * 1000).format('mm:ss')}
             </div>
         );
     }

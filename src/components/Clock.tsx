@@ -16,8 +16,8 @@ class Clock extends Component<any, ClockState> {
         this.state = {
             playerOne: false,
             playerTwo: false,
-            playerOneTime: 1000,
-            playerTwoTime: 1000,
+            playerOneTime: 600,
+            playerTwoTime: 600,
         }
     }
 
@@ -55,8 +55,8 @@ class Clock extends Component<any, ClockState> {
         this.setState({
             playerOne: false,
             playerTwo: false,
-            playerOneTime: 1000,
-            playerTwoTime: 1000,
+            playerOneTime: 600,
+            playerTwoTime: 600,
         });
     }
 
