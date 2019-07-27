@@ -20,28 +20,3 @@ const Timer: SFC<TimerProps> = ({on, seconds, onClick}) => {
 }
 
 export default Timer;
-
-/*
-export default class Timer extends Component<TimerProps, TimerState> {
-    constructor(props: any) {
-        super(props);
-    }
-
-    onClick() {
-        this.props.onClick();
-    }
-
-    render() {
-        const timerClass = this.props.on ? 'timer--active' : 'timer--inactive';
-        const timerClassNames = `timer ${timerClass}`;
-
-        const seconds = this.props.seconds;
-
-        return (
-            <div className={timerClassNames} onClick={this.onClick.bind(this)}>
-                {moment.utc(seconds * 1000).format('mm:ss')}
-            </div>
-        );
-    }
-}
-*/
