@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, SFC} from 'react';
 import './Timer.css';
 import moment from 'moment';
 
@@ -8,10 +8,20 @@ interface TimerProps {
     onClick: any;
 }
 
-interface TimerState {
-    time: number;
+const Timer: SFC<TimerProps> = ({on, seconds, onClick}) => {
+    const timerClass = on ? 'timer--active' : 'timer--inactive';
+    const timerClassNames = `timer ${timerClass}`;
+
+    return (
+        <div className={timerClassNames} onClick={onClick}>
+            {moment.utc(seconds * 1000).format('mm:ss')}
+        </div>
+    )
 }
 
+export default Timer;
+
+/*
 export default class Timer extends Component<TimerProps, TimerState> {
     constructor(props: any) {
         super(props);
@@ -34,3 +44,4 @@ export default class Timer extends Component<TimerProps, TimerState> {
         );
     }
 }
+*/
