@@ -1,0 +1,13 @@
+.menu {
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    /* width: 100vw; */
+    height: 100vh;
+    transition: left 0.3s;
+    background-color: orange;
+}
+
+.menu--open {
+    left: 0%;
+}

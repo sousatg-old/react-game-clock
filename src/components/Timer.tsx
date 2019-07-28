@@ -6,11 +6,12 @@ interface TimerProps {
     on: boolean;
     seconds: number;
     onClick: any;
+    className?: string;
 }
 
-const Timer: SFC<TimerProps> = ({on, seconds, onClick}) => {
+const Timer: SFC<TimerProps> = ({on, seconds, onClick, className}) => {
     const timerClass = on ? 'timer--active' : 'timer--inactive';
-    const timerClassNames = `timer ${timerClass}`;
+    const timerClassNames = `timer ${className} ${timerClass}`;
 
     return (
         <div className={timerClassNames} onClick={onClick}>

@@ -12,3 +12,7 @@
 .timer--active {
     background-color: darkorange;
 }
+
+.timer--playerone {
+    transform: rotate(180deg);
+}

@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Timer from './Timer';
 import './Clock.css';
+import Menu from './Menu';
 
 interface ClockState {
     playerOne: boolean;
     playerTwo: boolean;
     playerOneTime: number;
     playerTwoTime: number;
+    menuOpened: boolean;
 }
 
 class Clock extends Component<any, ClockState> {
@@ -18,6 +20,7 @@ class Clock extends Component<any, ClockState> {
             playerTwo: false,
             playerOneTime: 600,
             playerTwoTime: 600,
+            menuOpened: false,
         }
     }
 
@@ -60,13 +63,24 @@ class Clock extends Component<any, ClockState> {
         });
     }
 
+    toggleMenu() {
+        const isOpened = this.state.menuOpened ? false : true;
+
+        this.setState({...this.state, menuOpened: isOpened})
+    }
+
     render() {
         return (
-            <div className="clock">
-                <Timer seconds={this.state.playerOneTime} on={this.state.playerOne} onClick={this.handlePlayerOneClick.bind(this)} />
-                <button onClick={this.handleTimersReset.bind(this)}>Reset</button>
-                <Timer seconds={this.state.playerTwoTime} on={this.state.playerTwo} onClick={this.handlePlayerTwoClick.bind(this)} />
+            <div>
+                <Menu on={this.state.menuOpened} />
+                <div className="clock">
+                    <Timer className="timer--playerone" seconds={this.state.playerOneTime} on={this.state.playerOne} onClick={this.handlePlayerOneClick.bind(this)} />
+                    <button onClick={this.toggleMenu.bind(this)}>Menu</button>
+                    <button onClick={this.handleTimersReset.bind(this)}>Reset</button>
+                    <Timer seconds={this.state.playerTwoTime} on={this.state.playerTwo} onClick={this.handlePlayerTwoClick.bind(this)} />
+                </div>
             </div>
+
         );
     }
 }
