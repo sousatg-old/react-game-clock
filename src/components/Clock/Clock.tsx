@@ -2,27 +2,35 @@ import React, { useState, useEffect } from 'react';
 import Timer from '../Timer/Timer';
 import './Clock.css';
 
+const initialState = {
+    playerOne: {
+        on: false,
+        time: 600
+    },
+    playerTwo: {
+        on: false,
+        time: 600
+    }
+}
+
 const Clock = () => {
 
-    const initialState = {
-        playerOne: false,
-        playerTwo: false,
-        playerOneTime: 600,
-        playerTwoTime: 600,
-        menuOpened: false,
-    }
-
-    const [state, setState] = useState(initialState);
+    let [state, setState] = useState(initialState);
 
     useEffect(() =>{
         const interval = setInterval(() => {
-            if(state.playerOne) {
-                setState({...state, playerOneTime: state.playerOneTime - 1});
+            if(state.playerOne.on) {
+                let newState = state
+                newState.playerOne.time -= 1;
+                setState({...newState});
+
                 return;
             }
-            if(state.playerTwo) {
-                console.log(2);
-                setState({...state, playerTwoTime: state.playerTwoTime - 1});
+            if(state.playerTwo.on) {
+                let newState = state;
+                newState.playerTwo.time -= 1;
+                setState({...newState});
+
                 return;
             }
         }, 1000);
@@ -31,38 +39,33 @@ const Clock = () => {
     });
 
     const handlePlayerOneClick = () => {
-        setState({
-            ...state,
-            playerOne: false,
-            playerTwo: true,
-        });
+        let newState = state;
+
+        newState.playerOne.on = false;
+        newState.playerTwo.on = true;
+
+        setState({...newState});
     }
 
     const handlePlayerTwoClick = () => {
-        setState({
-            ...state,
-            playerOne: true,
-            playerTwo: false,
-        });
+        let newState = state;
+
+        newState.playerOne.on = true;
+        newState.playerTwo.on = false;
+
+        setState({...newState});
     }
 
     const handleTimersReset = () => {
         setState(initialState);
     }
 
-    const toggleMenu = () => {
-        const isOpened = state.menuOpened ? false : true;
-
-        setState({...state, menuOpened: isOpened})
-    }
-
     return (
         <div>
             <div className="clock">
-                <Timer className="timer--playerone" seconds={state.playerOneTime} on={state.playerOne} onClick={handlePlayerOneClick} />
-                <button onClick={toggleMenu}>Menu</button>
+                <Timer className="timer--playerone" seconds={state.playerOne.time} on={state.playerOne.on} onClick={handlePlayerOneClick} />
                 <button onClick={handleTimersReset}>Reset</button>
-                <Timer seconds={state.playerTwoTime} on={state.playerTwo} onClick={handlePlayerTwoClick} />
+                <Timer seconds={state.playerTwo.time} on={state.playerTwo.on} onClick={handlePlayerTwoClick} />
             </div>
         </div>
     );
