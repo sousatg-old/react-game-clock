@@ -1,60 +1,71 @@
-import React, { FC, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Timer from '../Timer/Timer';
 import './Clock.css';
-
-let cenas = 1;
 
 const Clock = () => {
 
     const initialState = {
-        playerOne: {
-            on: false,
-            time: 600
-        },
-        playerTwo: {
-            on: false,
-            time: 600
-        }
+        playerOne: false,
+        playerTwo: false,
+        playerOneTime: 600,
+        playerTwoTime: 600,
+        menuOpened: false,
     }
 
     const [state, setState] = useState(initialState);
-    
+
+    useEffect(() =>{
+        const interval = setInterval(() => {
+            if(state.playerOne) {
+                setState({...state, playerOneTime: state.playerOneTime - 1});
+                return;
+            }
+            if(state.playerTwo) {
+                console.log(2);
+                setState({...state, playerTwoTime: state.playerTwoTime - 1});
+                return;
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    });
+
     const handlePlayerOneClick = () => {
-        console.log(state);
-        const newState = state;
-        newState.playerOne.on = false;
-        newState.playerTwo.on = true;
-        setState(newState);
+        setState({
+            ...state,
+            playerOne: false,
+            playerTwo: true,
+        });
     }
-    
+
     const handlePlayerTwoClick = () => {
-        console.log(state);
-        const newState = state;
-        newState.playerOne.on = true;
-        newState.playerTwo.on = false;
-        setState(newState);
+        setState({
+            ...state,
+            playerOne: true,
+            playerTwo: false,
+        });
     }
-    
+
     const handleTimersReset = () => {
-        console.log(state);
         setState(initialState);
     }
 
-    const updateButton = () => {
-        cenas = 2;
-        console.log(cenas);
+    const toggleMenu = () => {
+        const isOpened = state.menuOpened ? false : true;
+
+        setState({...state, menuOpened: isOpened})
     }
 
-    const style = {
-        background: 'red',
-    }
-
-    return <div className="clock">
-            <button onClick={updateButton}>Carrega - {cenas}</button>
-            <Timer className="timer--playerone" seconds={state.playerOne.time} on={state.playerOne.on} onClick={handlePlayerOneClick} />
-            <button onClick={handleTimersReset}>Reset</button>
-            <Timer seconds={state.playerTwo.time} on={state.playerTwo.on} onClick={handlePlayerTwoClick} />
-        </div>;
+    return (
+        <div>
+            <div className="clock">
+                <Timer className="timer--playerone" seconds={state.playerOneTime} on={state.playerOne} onClick={handlePlayerOneClick} />
+                <button onClick={toggleMenu}>Menu</button>
+                <button onClick={handleTimersReset}>Reset</button>
+                <Timer seconds={state.playerTwoTime} on={state.playerTwo} onClick={handlePlayerTwoClick} />
+            </div>
+        </div>
+    );
 }
 
 export default Clock;
