@@ -1,23 +1,28 @@
 import React, { FC, useState, useEffect } from 'react';
 
+import { useAppState } from '../../context/AppContext';
 import Timer from '../../components/Timer/Timer';
 import Options from '../../components/Options/Options';
 
 import './Clock.css';
 
-var initialState = {
-    pause: true,
-    playerOne: {
-        on: true,
-        time: 600
-    },
-    playerTwo: {
-        on: false,
-        time: 600
-    }
-}
+
 
 const Home: FC = () => {
+    const {time} = useAppState();
+
+    const initialState = {
+        pause: true,
+        playerOne: {
+            on: true,
+            time: time
+        },
+        playerTwo: {
+            on: false,
+            time: time
+        }
+    }
+
     let [state, setState] = useState(initialState);
 
     useEffect(() =>{
