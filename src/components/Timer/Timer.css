@@ -7,9 +7,10 @@
 }
 
 .timer--inactive {
-    background-color: antiquewhite;
+    background-color: #d3d3d3;
 }
 
 .timer--active {
     background-color: darkorange;
+    color: white;
 }

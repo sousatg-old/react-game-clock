@@ -3,10 +3,12 @@ import Timer from '../Timer/Timer';
 import './Clock.css';
 import {ReactComponent as Reload} from '../../icons/reload.svg';
 import {ReactComponent as Play} from '../../icons/next.svg';
+import {ReactComponent as Pause} from '../../icons/pause.svg';
 
-const initialState = {
+var initialState = {
+    pause: true,
     playerOne: {
-        on: false,
+        on: true,
         time: 600
     },
     playerTwo: {
@@ -21,20 +23,21 @@ const Clock = () => {
 
     useEffect(() =>{
         const interval = setInterval(() => {
+            if(state.pause) {
+                return;
+            }
+
+            let newState = state;
+
             if(state.playerOne.on) {
-                let newState = state
                 newState.playerOne.time -= 1;
-                setState({...newState});
-
-                return;
-            }
-            if(state.playerTwo.on) {
-                let newState = state;
+            } else {
                 newState.playerTwo.time -= 1;
-                setState({...newState});
-
-                return;
             }
+
+            setState({...newState});
+
+            return;
         }, 1000);
 
         return () => clearInterval(interval);
@@ -43,6 +46,9 @@ const Clock = () => {
     const handlePlayerOneClick = () => {
         let newState = state;
 
+        if(!state.playerOne.on) return;
+
+        newState.pause = false;
         newState.playerOne.on = false;
         newState.playerTwo.on = true;
 
@@ -52,14 +58,32 @@ const Clock = () => {
     const handlePlayerTwoClick = () => {
         let newState = state;
 
+        if(!state.playerTwo.on) return;
+
+        newState.pause = false;
         newState.playerOne.on = true;
         newState.playerTwo.on = false;
 
         setState({...newState});
     }
 
+    const handlePlayClick = () => {
+        let newState = state;
+        newState.pause = !newState.pause;
+        setState({...newState});
+    }
+
     const handleTimersReset = () => {
-        setState(initialState);
+        let newState = state;
+
+        newState.pause = true;
+        newState.playerOne.on = true;
+        newState.playerOne.time = 600;
+
+        newState.playerTwo.on = false;
+        newState.playerTwo.time = 600;
+
+        setState({...newState});
     }
 
     return (
@@ -67,8 +91,8 @@ const Clock = () => {
             <div className="clock">
                 <Timer className="timer--playerone" seconds={state.playerOne.time} on={state.playerOne.on} onClick={handlePlayerOneClick} />
                 <div className="options">
-                    <button className="btn" onClick={handleTimersReset}>
-                        <Play width="25" fill="white" />
+                    <button className="btn" onClick={handlePlayClick}>
+                        {state.pause ? <Play width="25" fill="white" /> : <Pause width="25" fill="white" /> }
                     </button>
                     <button className="btn" onClick={handleTimersReset}>
                         <Reload width="25" fill="white" />
