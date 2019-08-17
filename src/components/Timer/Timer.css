@@ -1,8 +1,9 @@
 .timer {
     display: flex;
-    flex-grow: 1;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
+    font-size: 80px;
 }
 
 .timer--inactive {
@@ -11,8 +12,4 @@
 
 .timer--active {
     background-color: darkorange;
-}
-
-.timer--playerone {
-    transform: rotate(180deg);
 }

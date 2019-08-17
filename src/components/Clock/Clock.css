@@ -1,9 +1,58 @@
 .clock {
-    display: flex;
-    width: 500px;
     height: 100vh;
-    border: 1px solid black;
-    box-sizing: border-box;
-    flex-flow: column;
-    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+        "a a a a"
+        ". b b .";
+}
+
+.options {
+    text-align: center;
+    grid-area: a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer {
+    grid-column: span 2;
+}
+
+.btn {
+    background: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+.btn img {
+    fill: white;
+    background-color: white;
+}
+
+@media only screen and (max-width: 600px) {
+    .clock {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 50px 1fr;
+        grid-template-areas: 
+            "b"
+            "a"
+            "c";
+    }
+
+    .options {
+        grid-area: a;
+    }
+
+    .timer {
+        grid-column: span 1;
+    }
+
+    .clock > .timer:first-child {
+        transform: rotate(180deg);
+    }
 }

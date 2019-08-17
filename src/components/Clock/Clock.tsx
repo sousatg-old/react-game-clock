@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Timer from '../Timer/Timer';
 import './Clock.css';
+import {ReactComponent as Reload} from '../../icons/reload.svg';
+import {ReactComponent as Play} from '../../icons/next.svg';
 
 const initialState = {
     playerOne: {
@@ -64,7 +66,14 @@ const Clock = () => {
         <div>
             <div className="clock">
                 <Timer className="timer--playerone" seconds={state.playerOne.time} on={state.playerOne.on} onClick={handlePlayerOneClick} />
-                <button onClick={handleTimersReset}>Reset</button>
+                <div className="options">
+                    <button className="btn" onClick={handleTimersReset}>
+                        <Play width="25" fill="white" />
+                    </button>
+                    <button className="btn" onClick={handleTimersReset}>
+                        <Reload width="25" fill="white" />
+                    </button>
+                </div>
                 <Timer seconds={state.playerTwo.time} on={state.playerTwo.on} onClick={handlePlayerTwoClick} />
             </div>
         </div>

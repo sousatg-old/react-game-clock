@@ -1,4 +1,4 @@
-import React, {Component, SFC} from 'react';
+import React, {SFC} from 'react';
 import './Timer.css';
 import moment from 'moment';
 
@@ -15,7 +15,8 @@ const Timer: SFC<TimerProps> = ({on, seconds, onClick, className}) => {
 
     return (
         <div className={timerClassNames} onClick={onClick}>
-            {moment.utc(seconds * 1000).format('mm:ss')}
+            <div>{moment.utc(seconds * 1000).format('mm:ss')}</div>
+
         </div>
     )
 }
