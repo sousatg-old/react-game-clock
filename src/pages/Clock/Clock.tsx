@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import Timer from '../Timer/Timer';
+import React, { FC, useState, useEffect } from 'react';
+
+import Timer from '../../components/Timer/Timer';
+import Options from '../../components/Options/Options';
+
 import './Clock.css';
-import Options from '../Options/Options';
 
 var initialState = {
     pause: true,
@@ -15,8 +17,7 @@ var initialState = {
     }
 }
 
-const Clock = () => {
-
+const Home: FC = () => {
     let [state, setState] = useState(initialState);
 
     useEffect(() =>{
@@ -95,4 +96,4 @@ const Clock = () => {
     );
 }
 
-export default Clock;
+export default Home;

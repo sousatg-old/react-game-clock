@@ -18,7 +18,7 @@ const Timer: SFC<TimerProps> = ({on, seconds, onClick, className}) => {
             <div>{moment.utc(seconds * 1000).format('mm:ss')}</div>
 
         </div>
-    )
+    );
 }
 
 export default Timer;
