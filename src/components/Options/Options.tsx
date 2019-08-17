@@ -1,4 +1,4 @@
-import React, { SFC } from 'react';
+import React, { FC } from 'react';
 import {Link} from 'react-router-dom';
 
 import {ReactComponent as Reload} from '../../icons/reload.svg';
@@ -14,7 +14,7 @@ interface OptionsProps {
     handleResetClick: any;
 }
 
-const Options = ({pause, handlePlayClick, handleResetClick}: OptionsProps) => {
+const Options: FC<OptionsProps> = ({pause, handlePlayClick, handleResetClick}: OptionsProps) => {
  return (
     <div className="options">
         <Link to="/settings">

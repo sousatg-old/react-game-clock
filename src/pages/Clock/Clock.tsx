@@ -26,7 +26,7 @@ const Home: FC = () => {
                 return;
             }
 
-            if(state.playerOne.time === 0 || state.playerTwo.time == 0) {
+            if(state.playerOne.time === 0 || state.playerTwo.time === 0) {
                 return ;
             }
 
