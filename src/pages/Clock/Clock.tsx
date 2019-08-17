@@ -1,6 +1,6 @@
 import React, { FC, useState, useEffect } from 'react';
 
-import { useAppState } from '../../context/AppContext';
+import { useSettingsState } from '../../context/SettingsContext';
 import Timer from '../../components/Timer/Timer';
 import Options from '../../components/Options/Options';
 
@@ -9,7 +9,7 @@ import './Clock.css';
 
 
 const Home: FC = () => {
-    const {time} = useAppState();
+    const {time} = useSettingsState();
 
     const initialState = {
         pause: true,

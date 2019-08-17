@@ -17,9 +17,9 @@ interface OptionsProps {
 const Options: FC<OptionsProps> = ({pause, handlePlayClick, handleResetClick}: OptionsProps) => {
  return (
     <div className="options">
-        <Link to="/settings">
+        {/* <Link to="/settings">
             <Settings width="25" fill="white" />
-        </Link>
+        </Link> */}
         <button className="btn" onClick={handlePlayClick}>
             {pause ? <Play width="25" fill="white" /> : <Pause width="25" fill="white" /> }
         </button>
