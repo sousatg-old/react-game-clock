@@ -26,6 +26,10 @@ const Home: FC = () => {
                 return;
             }
 
+            if(state.playerOne.time === 0 || state.playerTwo.time == 0) {
+                return ;
+            }
+
             let newState = state;
 
             if(state.playerOne.on) {
