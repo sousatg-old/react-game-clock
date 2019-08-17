@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "95115f5bb33c4968fcaa05ef1643e66f",
+    "revision": "0e95bed87dcb4713f35e2b6cd82168bd",
     "url": "/react-game-clock/index.html"
   },
   {
-    "revision": "6757942e024c8853fcdb",
-    "url": "/react-game-clock/static/css/main.0f2ef7e9.chunk.css"
+    "revision": "b1177546a5de4e66f175",
+    "url": "/react-game-clock/static/css/main.a86c83a9.chunk.css"
   },
   {
-    "revision": "96e9b62d70833567fb07",
-    "url": "/react-game-clock/static/js/2.75dce891.chunk.js"
+    "revision": "73bdbac60b65bc68cf4c",
+    "url": "/react-game-clock/static/js/2.99577ac9.chunk.js"
   },
   {
-    "revision": "6757942e024c8853fcdb",
-    "url": "/react-game-clock/static/js/main.ba7a2a6a.chunk.js"
+    "revision": "b1177546a5de4e66f175",
+    "url": "/react-game-clock/static/js/main.8d51315d.chunk.js"
   },
   {
     "revision": "9e5fd2c576a3a35a1277",
@@ -30,5 +30,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "066d8846ccbbc22a75bafbf6c89a6a9b",
     "url": "/react-game-clock/static/media/reload.066d8846.svg"
+  },
+  {
+    "revision": "04e848f8f484417eea06b36b6874e01b",
+    "url": "/react-game-clock/static/media/settings.04e848f8.svg"
   }
 ]);

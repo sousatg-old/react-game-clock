@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/react-game-clock/static/css/main.0f2ef7e9.chunk.css",
-    "main.js": "/react-game-clock/static/js/main.ba7a2a6a.chunk.js",
-    "main.js.map": "/react-game-clock/static/js/main.ba7a2a6a.chunk.js.map",
+    "main.css": "/react-game-clock/static/css/main.a86c83a9.chunk.css",
+    "main.js": "/react-game-clock/static/js/main.8d51315d.chunk.js",
+    "main.js.map": "/react-game-clock/static/js/main.8d51315d.chunk.js.map",
     "runtime~main.js": "/react-game-clock/static/js/runtime~main.31d49211.js",
     "runtime~main.js.map": "/react-game-clock/static/js/runtime~main.31d49211.js.map",
-    "static/js/2.75dce891.chunk.js": "/react-game-clock/static/js/2.75dce891.chunk.js",
-    "static/js/2.75dce891.chunk.js.map": "/react-game-clock/static/js/2.75dce891.chunk.js.map",
+    "static/js/2.99577ac9.chunk.js": "/react-game-clock/static/js/2.99577ac9.chunk.js",
+    "static/js/2.99577ac9.chunk.js.map": "/react-game-clock/static/js/2.99577ac9.chunk.js.map",
     "index.html": "/react-game-clock/index.html",
-    "precache-manifest.4afd65d37968ec8f1467b31e33e599b5.js": "/react-game-clock/precache-manifest.4afd65d37968ec8f1467b31e33e599b5.js",
+    "precache-manifest.6f83e527062d8108b6760adf30f5c427.js": "/react-game-clock/precache-manifest.6f83e527062d8108b6760adf30f5c427.js",
     "service-worker.js": "/react-game-clock/service-worker.js",
-    "static/css/main.0f2ef7e9.chunk.css.map": "/react-game-clock/static/css/main.0f2ef7e9.chunk.css.map",
+    "static/css/main.a86c83a9.chunk.css.map": "/react-game-clock/static/css/main.a86c83a9.chunk.css.map",
     "static/media/next.ff2b9671.svg": "/react-game-clock/static/media/next.ff2b9671.svg",
     "static/media/pause.449c3978.svg": "/react-game-clock/static/media/pause.449c3978.svg",
-    "static/media/reload.066d8846.svg": "/react-game-clock/static/media/reload.066d8846.svg"
+    "static/media/reload.066d8846.svg": "/react-game-clock/static/media/reload.066d8846.svg",
+    "static/media/settings.04e848f8.svg": "/react-game-clock/static/media/settings.04e848f8.svg"
   }
 }
