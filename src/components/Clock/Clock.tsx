@@ -4,6 +4,8 @@ import './Clock.css';
 import {ReactComponent as Reload} from '../../icons/reload.svg';
 import {ReactComponent as Play} from '../../icons/next.svg';
 import {ReactComponent as Pause} from '../../icons/pause.svg';
+import {ReactComponent as Settings} from '../../icons/settings.svg';
+import {Link} from 'react-router-dom';
 
 var initialState = {
     pause: true,
@@ -91,6 +93,9 @@ const Clock = () => {
             <div className="clock">
                 <Timer className="timer--playerone" seconds={state.playerOne.time} on={state.playerOne.on} onClick={handlePlayerOneClick} />
                 <div className="options">
+                    <Link to="/settings">
+                        <Settings width="25" fill="white" />
+                    </Link>
                     <button className="btn" onClick={handlePlayClick}>
                         {state.pause ? <Play width="25" fill="white" /> : <Pause width="25" fill="white" /> }
                     </button>

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, {FC} from 'react';
 import './App.css';
-import Clock from './components/Clock/Clock';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+import Home from './pages/Home';
+import Settings from './pages/Settings';
 
-const App: React.FC = () => {
+const App: FC = () => {
   return (
-    <div className="container">
-      <Clock />
-    </div>
+    <Router>
+      <Route exact path="/" component={Home} />
+      <Route path="/settings" component={Settings} />
+    </Router>
   );
 }
 
