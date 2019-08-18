@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "49c85449910627c6c133ab87b9555cae",
+    "revision": "7cda081e71bf775e8f38197fef0e16d7",
     "url": "/react-game-clock/index.html"
   },
   {
-    "revision": "8b9a8fa74c962b1367e3",
-    "url": "/react-game-clock/static/css/main.a86c83a9.chunk.css"
+    "revision": "f8142d8a1d873011cd8c",
+    "url": "/react-game-clock/static/css/main.60b6d795.chunk.css"
   },
   {
     "revision": "569c5a6c1cc162636a88",
     "url": "/react-game-clock/static/js/2.443e8123.chunk.js"
   },
   {
-    "revision": "8b9a8fa74c962b1367e3",
+    "revision": "f8142d8a1d873011cd8c",
     "url": "/react-game-clock/static/js/main.63694cfb.chunk.js"
   },
   {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-game-clock/static/css/main.a86c83a9.chunk.css",
+    "main.css": "/react-game-clock/static/css/main.60b6d795.chunk.css",
     "main.js": "/react-game-clock/static/js/main.63694cfb.chunk.js",
     "main.js.map": "/react-game-clock/static/js/main.63694cfb.chunk.js.map",
     "runtime~main.js": "/react-game-clock/static/js/runtime~main.31d49211.js",
@@ -8,9 +8,9 @@
     "static/js/2.443e8123.chunk.js": "/react-game-clock/static/js/2.443e8123.chunk.js",
     "static/js/2.443e8123.chunk.js.map": "/react-game-clock/static/js/2.443e8123.chunk.js.map",
     "index.html": "/react-game-clock/index.html",
-    "precache-manifest.7834865e434e879d6814d8e0d6857847.js": "/react-game-clock/precache-manifest.7834865e434e879d6814d8e0d6857847.js",
+    "precache-manifest.2c15b36dbb72b3eddf6a877abbd7d75c.js": "/react-game-clock/precache-manifest.2c15b36dbb72b3eddf6a877abbd7d75c.js",
     "service-worker.js": "/react-game-clock/service-worker.js",
-    "static/css/main.a86c83a9.chunk.css.map": "/react-game-clock/static/css/main.a86c83a9.chunk.css.map",
+    "static/css/main.60b6d795.chunk.css.map": "/react-game-clock/static/css/main.60b6d795.chunk.css.map",
     "static/media/next.ff2b9671.svg": "/react-game-clock/static/media/next.ff2b9671.svg",
     "static/media/pause.449c3978.svg": "/react-game-clock/static/media/pause.449c3978.svg",
     "static/media/reload.066d8846.svg": "/react-game-clock/static/media/reload.066d8846.svg"
