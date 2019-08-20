@@ -86,10 +86,10 @@ const Home: FC = () => {
 
         newState.pause = true;
         newState.playerOne.on = true;
-        newState.playerOne.time = 600;
+        newState.playerOne.time = time;
 
         newState.playerTwo.on = false;
-        newState.playerTwo.time = 600;
+        newState.playerTwo.time = time;
 
         setState({...newState});
     }
