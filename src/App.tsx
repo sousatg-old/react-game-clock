@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import './App.css';
 import {Route, HashRouter} from 'react-router-dom';
-import Clock from './pages/Clock/Clock';
+import Clock from './pages/Clock';
 import Settings from './pages/Settings';
 import { SettingsProvider } from './context/SettingsContext';
 import ReactGA from 'react-ga';

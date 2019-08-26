@@ -1,10 +1,33 @@
 import React, { FC, useState, useEffect } from 'react';
 
-import { useSettingsState } from '../../context/SettingsContext';
-import Timer from '../../components/Timer/Timer';
-import Options from '../../components/Options/Options';
+import { useSettingsState } from '../context/SettingsContext';
+import Timer from '../components/Timer';
+import Options from '../components/Options';
+import styled from 'styled-components';
 
-import './Clock.css';
+const Clock = styled.div`
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+        "a a a a"
+        ". b b .";
+
+    @media only screen and (max-width: 600px) {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 50px 1fr;
+        grid-template-areas: 
+            "b"
+            "a"
+            "c";
+
+        & > .timer:first-child {
+            transform: rotate(180deg);
+        }
+    }
+`
 
 
 
@@ -96,11 +119,11 @@ const Home: FC = () => {
 
     return (
         <div>
-            <div className="clock">
+            <Clock>
                 <Timer className="timer--playerone" seconds={state.playerOne.time} on={state.playerOne.on} onClick={handlePlayerOneClick} />
                 <Options pause={state.pause} handlePlayClick={onPlayClick} handleResetClick={onResetClick} />
                 <Timer seconds={state.playerTwo.time} on={state.playerTwo.on} onClick={handlePlayerTwoClick} />
-            </div>
+            </Clock>
         </div>
     );
 }
